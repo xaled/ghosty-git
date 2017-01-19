@@ -31,7 +31,7 @@ if [ -z "$res" ]; then
        sudo docker rm $REPO_NAME;
     fi
     echo "Running docker";
-    sudo docker run -it --rm --name $REPO_NAME --hostname  $REPO_NAME -v $REPO_DIR:/home/user/Dropbox -v $REPO_CLOUDDATA_DIR:/home/user/.dropbox ghosty-dropbox bash
+    sudo docker run -d --name $REPO_NAME --hostname  $REPO_NAME -v $REPO_ENC_DIR:/home/user/Dropbox -v $REPO_CLOUDDATA_DIR:/home/user/.dropbox ghosty-dropbox
 else
     echo "There is a running instance of $REPO_NAME"
 fi

@@ -1,0 +1,14 @@
+#!/bin/bash
+#kgitinit  reponame
+if [ -z "$2" ]; then
+    echo "need two arguments: repository name, depot name";
+    echo "kgitgo reponame depotname"
+    exit 1;
+fi
+
+REPO_NAME=$1
+DEPOT_NAME=$2
+NEW_REMOTE_REPO="/home/xaled/.repos/$DEPOT_NAME/$REPO_NAME.git"
+
+git init --bare "$NEW_REMOTE_REPO"
+git clone "$NEW_REMOTE_REPO"

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#kgitgo original reponame
+if [ -z "$2" ]; then
+    echo "need two arguments: original dir, depot name";
+    echo "kgitgo original_dir depotname"
+    exit 1;
+fi
+
+ORIGINAL_GIT=$1
+DEPOT_NAME=$2
+REPO_BKP="$1_bkp"
+NEW_REMOTE_REPO="/home/xaled/.repos/$DEPOT_NAME/$ORIGINAL_GIT.git"
+
+
+echo "
+entring $ORIGINAL_GIT" &&
+cd "$ORIGINAL_GIT" &&
+echo PWD=$PWD &&
+echo "
+initing remote repo: $NEW_REMOTE_REPO" &&
+git init --bare "$NEW_REMOTE_REPO" &&
+echo "
+adding remote origin" &&
+git remote add origin "$NEW_REMOTE_REPO" &&
+echo "
+pushing master to remote" &&
+git push origin master && 
+echo "
+making backup for repo: $REPO_BKP" &&
+cd .. &&
+mv "$ORIGINAL_GIT" "$REPO_BKP" &&
+echo "
+cloning remote repo" &&
+git clone "$NEW_REMOTE_REPO" &&
+echo "
+removing backup" &&
+rm -fR "$REPO_BKP"
