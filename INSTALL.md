@@ -43,3 +43,9 @@ activate, kill and encfs password for both repositories
 * # cp depot-start.sh  /usr/bin/depot-start
 * # cp ghosty-start.sh /usr/bin/ghosty-start
 * add in /etc/rc.local this ligne: usr/bin/depot-start;
+
+## 5. Crontab
+
+* $ sudo crontab -e
+add this line
+*/15 * * * * /usr/bin/depot-start
