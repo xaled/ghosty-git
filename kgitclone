@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -z "$2" ]; then
+    echo "need two arguments: depotname, reponame";
+    echo "kgitgo depotname reponame"
+    exit 1;
+fi
+
+
+DEPOTNAME=$1
+REPONAME=$2
+REPO_URL="/home/xaled/.repos/$DEPOTNAME/$REPONAME.git"
+git clone $REPO_URL
+
