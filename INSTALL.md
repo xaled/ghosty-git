@@ -47,5 +47,5 @@ activate, kill and encfs password for both repositories
 ## 5. Crontab
 
 * >$ sudo crontab -e
-* add this line
-*/15 * * * * /usr/bin/depot-start
+* add this line:
+> \*/15 \* \* \* \* /usr/bin/depot-start
