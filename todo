@@ -1,0 +1,3 @@
+- automatic install (ask only for passwords)
+- show sync status
+- service https://unix.stackexchange.com/questions/47695/how-to-write-startup-script-for-systemd

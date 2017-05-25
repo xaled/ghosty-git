@@ -11,7 +11,7 @@ $ ./dropbox-build-docker.sh
 
 ## 3. Install and activate instance
 run install command
-$ ./dropbox-install.sh reponame
+$ ./dropbox-install.sh reponamdepot-stop.she
 
 open activation link
 
@@ -36,16 +36,16 @@ activate, kill and encfs password for both repositories
 
 ### 4.3 automatic for depots (password in a file)
 
-* run: $ sudo ./install-depot.sh (and enter encfs passwords)
+* run: $ sudo ./depot-install.sh (and enter encfs passwords)
 
 * create password files in /etc/homedepot.pass and /etc/workdepot.pass
-* # chmod 600 /etc/*depot.pass 
-* # cp depot-start.sh  /usr/bin/depot-start
-* # cp ghosty-start.sh /usr/bin/ghosty-start
+* > \# chmod 600 /etc/*depot.pass 
+* > \# cp depot-start.sh  /usr/bin/depot-start
+* > \# cp ghosty-start.sh /usr/bin/ghosty-start
 * add in /etc/rc.local this ligne: usr/bin/depot-start;
 
 ## 5. Crontab
 
-* $ sudo crontab -e
-add this line
+* >$ sudo crontab -e
+* add this line
 */15 * * * * /usr/bin/depot-start
