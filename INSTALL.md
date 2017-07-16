@@ -11,7 +11,7 @@ $ ./dropbox-build-docker.sh
 
 ## 3. Install and activate instance
 run install command
-$ ./dropbox-install.sh reponamdepot-stop.she
+$ ./dropbox-install.sh reponame
 
 open activation link
 
@@ -37,6 +37,9 @@ activate, kill and encfs password for both repositories
 ### 4.3 automatic for depots (password in a file)
 
 * run: $ sudo ./depot-install.sh (and enter encfs passwords)
+(install rc.local if necessary)
+
+OR
 
 * create password files in /etc/homedepot.pass and /etc/workdepot.pass
 * > \# chmod 600 /etc/*depot.pass 

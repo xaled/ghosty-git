@@ -16,4 +16,7 @@ cp ./depot-stop.sh /usr/bin/depot-stop
 cp ./ghosty-stop.sh /usr/bin/ghosty-stop
 
 echo "add this line in /etc/rc.local:" 
-echo "usr/bin/depot-start;"
+echo "/usr/bin/depot-start;"
+echo "
+if /etc/rc.local does not exist: 
+execute ./install-rc-local.sh"
