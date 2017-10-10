@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
     exit 1;
 fi
 
-REPO_NAME=$2
+REPO_NAME=$1
 
 
 
