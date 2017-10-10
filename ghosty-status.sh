@@ -24,7 +24,7 @@ if [ -z "$res" ]; then
     
 else
     echo "There is a running instance of $REPO_NAME"
-    docker exec -it $REPO_NAME /home/user/bash
+    docker exec -it $REPO_NAME /home/user/dropbox.py status 
 fi
 
 #docker run -d --hostname  $REPO_NAME -v $REPO_DIR:/home/user/Dropbox -v $REPO_CLOUDDATA_DIR:/home/user/.dropbox ghosty-dropbox
