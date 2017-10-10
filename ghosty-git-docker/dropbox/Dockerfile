@@ -2,7 +2,7 @@ FROM ubuntu
 MAINTAINER xaled
 
 RUN apt-get update && \
-    apt-get install -y wget && \
+    apt-get install -y wget python && \
     apt-get clean
 
 RUN useradd -u 1000 --create-home -s /bin/bash user
@@ -12,6 +12,7 @@ WORKDIR /home/user
 	
 
 RUN su user -c 'cd /home/user && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -' 
+RUN su user -c 'cd /home/user && wget -O dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py" && chmod +x dropbox.py' 
 RUN su user -c "mkdir /home/user/Dropbox"
 RUN su user -c "mkdir /home/user/.dropbox"
 
