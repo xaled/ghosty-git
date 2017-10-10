@@ -14,6 +14,8 @@ cp ./depot-start.sh /usr/bin/depot-start
 cp ./ghosty-start.sh /usr/bin/ghosty-start
 cp ./depot-stop.sh /usr/bin/depot-stop
 cp ./ghosty-stop.sh /usr/bin/ghosty-stop
+cp ./depot-status.sh /usr/bin/depot-status
+cp ./ghosty-status.sh /usr/bin/ghosty-status
 
 echo "add this line in /etc/rc.local:" 
 echo "/usr/bin/depot-start;"
