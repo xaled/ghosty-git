@@ -1,15 +1,20 @@
 #!/bin/bash
-
-
-if [ -z "$1" ]; then
-    echo "need one argument:  reponame";
+if [ -z "$2" ]; then
+    echo "need two argument: user reponame";
     exit 1;
 fi
 
-REPO_NAME=$1
+USER=$1
+REPO_NAME=$2
+REPO_DIR=/home/$USER/.repos/$REPO_NAME
 
 
-
+res=`mount -l | grep $REPO_DIR`
+if [ -z "$res" ]; then
+    echo "encfs drive is not mounted."
+else
+    echo "encfs drive is mounted.";
+fi
 
 res=`docker ps| grep $REPO_NAME`;
 if [ -z "$res" ]; then

@@ -21,10 +21,10 @@ REPO_CLOUDDATA_DIR=/home/$USER/.repos/$REPO_NAME.cld
 
 res=`mount -l | grep $REPO_DIR`
 if [ -z "$res" ]; then
-    echo "encfs drive is not mounted"
+    echo "encfs drive is not mounted."
 else
-    echo "unmounting encfs drive...";
-    umount $REPO_DIR
+    echo "encfs drive is mounted.";
+    # umount $REPO_DIR
 fi
 
 res=`docker ps| grep $REPO_NAME`;
